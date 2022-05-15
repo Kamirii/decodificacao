@@ -1,23 +1,18 @@
-function encodeBase64(){
 
-}
-function decodeBase64(){
-    
+const pegaValorInput = () => {
+    let inputValor = 
+    document.getElementById('input-texto').value; 
+    document.getElementById('output-texto').innerHTML = inputValor;
+  
 }
 
-function encodeCifraCesar(){
-
-}
-function decodeCifraCesar(){
-    
-}
 function numeroTrocaPosicao(){}
 
     var botao = 
     document.querySelector('#botao-cifra-cesar')
 
     var inputDeslocamento = 
-    document.querySelector('#teste')
+    document.querySelector('#opcao-deslocamento')
     botao.addEventListener('click',()=>{ inputDeslocamento.classList.toggle('show');})
    
 

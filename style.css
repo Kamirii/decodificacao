@@ -6,31 +6,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: green;
+    background-color: rgb(30, 113, 116);
     padding: 15px;
  
 }
 .main-container{
     display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
+  
+    justify-content: center;
+    align-items: center;
+
 }
 .form-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    flex-direction: column ;
+    background-color: azure;
+ 
 }
-.resultado-container{
-    display: flex;
-    margin: 60px;
+#botao-selecao{
+  display: flex;
+  margin:0;
+
 }
 
-
-#teste{
-    font-size: 10px;
-}
 .hide{
     visibility: hidden;
 }
