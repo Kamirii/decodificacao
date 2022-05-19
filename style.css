@@ -12,16 +12,18 @@
 }
 .main-container{
     display: flex;
-  
     justify-content: center;
     align-items: center;
+    ;
 
 }
 .form-container{
+    margin: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: azure;
+
  
 }
 #botao-selecao{
@@ -31,6 +33,8 @@
 }
 
 .hide{
+    display: flex;
+    justify-content: end;
     visibility: hidden;
 }
 .show{
