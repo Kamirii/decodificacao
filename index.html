@@ -15,13 +15,14 @@
 
             <form action="" method="post">
 
-                <input class = "botao-selecao" id = "botao-base64" type= "radio" name = "selecione"> Base64 </input> 
+                <input class = "botao-selecao" id = "botao-base64" type= "radio" name = "selecione" > Base64 </input> 
                 <input class = "botao-selecao" id = "botao-cifra-cesar" type= "radio" name = "selecione"> Cifra Cesar </input> 
                 
                 <input id = "input-texto" type="text" autocomplete="off">  </input> 
 
-                <button type="button" class = "botao-codigo" id="botao-codifica" onclick="pegaValorInput()"> codificar </button>
-             
+                <button type="button" class = "botao-codigo" id="botao-codifica" onclick="checaCondicaoEncode()"> codificar </button>
+                <button type="button" class = "botao-codigo" id="botao-codifica" onclick="checaCondicaoDecode()"> Decodificar </button>
+                
                 <p id ="output-texto"> </p> 
               
                 <div id = "opcao-deslocamento" class="hide" >
