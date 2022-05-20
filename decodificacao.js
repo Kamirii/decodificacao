@@ -91,14 +91,4 @@ const checaCondicaoDecode = () => {
     }
 
 }
-   // if(inputValor.charCodeAt(i) >= 65 && inputValor.charCodeAt(i)<= 90){
-            //     resultado = ((inputValor.charCodeAt(i) - 65) + deslocamento) % 26 + 65
-            //     console.log(resultado)
-            // } else if(inputValor.charCodeAt(i) >= 97 && inputValor.charCodeAt(i)<= 122){
-            //     resultado = ((inputValor.charCodeAt(i) - 97) + deslocamento) % 26  + 97;
-            //     console.log(resultado)
-            // } else if (inputValor.charCodeAt(i)===32 ){
-               
-            //     resultado = 32;
-            //     console.log(resultado)
-            // }
+   
