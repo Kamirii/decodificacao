@@ -1,70 +1,74 @@
-
- let inputValor
-
-    let botao = 
+     const botao = 
      document.querySelector('#botao-cifra-cesar')
-    let  inputDeslocamento = 
+     const inputDeslocamento = 
      document.querySelector('#opcao-deslocamento')
      botao.addEventListener('click',()=>{ inputDeslocamento.classList.toggle('show');})
    
-       let cifraCesar = document.getElementById("botao-cifra-cesar")
-       let base64 = document.getElementById("botao-base64")
-      
-
-     const codificaBase = () => {
+       const cifraCesar = document.getElementById("botao-cifra-cesar")
+       const base64 = document.getElementById("botao-base64")
+     
+       const codificaBase = (texto) => {
         inputValor = document.getElementById('input-texto').value; 
         texto =  btoa(inputValor)
         document.getElementById('output-texto').innerHTML = texto;
+        return texto
         
-
     }
-        
-     const codificaCifra = () => {
-        inputValor = document.getElementById('input-texto').value
-        const deslocamento = document.getElementById('opcao-deslocamento').value
-        let codificado = '' // vazio e vamos preencher com o valor que colocarmos 
-        let resultado
-        for(let i = 0; i < inputValor.length; i ++){
-            if(inputValor.charCodeAt(i) >= 65 && inputValor.charCodeAt(i)<= 90){
-                resultado = (((inputValor.charCodeAt(i) - 65)+ deslocamento)% 26) + 65
-            } else if(inputValor.charCodeAt(i) >= 97 && inputValor.charCodeAt(i)<= 122){
-                resultado = (((inputValor.charCodeAt(i)- 97) + deslocamento) % 26 ) +97;
-            } else if (inputValor.charCodeAt(i)===32 ){
-                resultado = 32;
-            }
-            codificado += String.fromCharCode(resultado);
-        }
-        document.getElementById('output-texto').innerHTML = codificado;
-        return codificado.toUpperCase()
-     }
-
-
     const decodificaBase = (texto) => {
         inputValor = document.getElementById('input-texto').value; 
          texto =  atob(inputValor)
         document.getElementById('output-texto').innerHTML = texto;
         return texto
     }
+    
+     const codificaCifra = () => {
+        inputValor = document.getElementById('input-texto').value
+        deslocamento = document.getElementById('opcao-deslocamento').value
+        codificado = '' // vazio e vamos preencher com o valor que colocarmos no for
+        console.log(deslocamento)
+        for(let i = 0; i < inputValor.length; i++){
+         let textoCodificado = inputValor[i].charCodeAt()
+         let chave = Number(deslocamento)
+
+         if(textoCodificado >= 97 && textoCodificado <= 122){
+             let resultado = textoCodificado + chave 
+             if(resultado > 122){
+                 resultado = 96 + resultado - 122
+             }
+             codificado += String.fromCharCode(resultado)  
+         }
+
+        }
+        console.log(codificado)
+        document.getElementById('output-texto').innerHTML = codificado;
+      
+     }
 
     const decodificaCifra = () => {
-    
+
      inputValor = document.getElementById('input-texto').value
-     const deslocamento = document.getElementById('opcao-deslocamento').value
-     let codificado = ''
-     let resultado
-     for(let i = 0; i < codificado.length; i++){
-         if(inputValor.charCodeAt(i)>= 65 && inputValor.charCodeAt(i) <= 90){
-             resultado = (((codificado.charCodeAt(i) - 90)-deslocamento) % 26) + 90
-         }else if(inputValor.charCodeAt(i)>=97 && inputValor.charCodeAt(i)<= 122){
-             resultado =(((codificado.charCodeAt(i)-122)-deslocamento)% 26) + 122
-         }else if(inputValor.charCodeat(i)===32){
+      let passo = document.getElementById('opcao-deslocamento').value
+      let deslocamento = Number(passo)
+      let decodificado = ''
+      let resultado
+     for(let i = 0; i < inputValor.length; i++){
+         if(inputValor.charCodeAt(i) >= 65 && inputValor.charCodeAt(i) <= 90){
+             console.log(inputValor[i])
+             resultado = (((inputValor.charCodeAt(i) - 90)-deslocamento) % 26) + 90
+         }else if(inputValor.charCodeAt(i)>=97 && inputValor.charCodeAt(i) <= 122){
+            console.log(inputValor[i])
+             resultado =(((inputValor.charCodeAt(i)-122)-deslocamento)% 26) + 122
+         }else if(inputValor.charCodeAt(i)===32){
+            console.log(inputValor[i])
              resultado = 32;
          }
-         codificado +=String.fromCharCode(resultado)
+         decodificado += String.fromCharCode(resultado)
      }
-     document.getElementById('output-texto').innerHTML = codificado;
-     return codificado.toLowerCase()
+     document.getElementById('output-texto').innerHTML = decodificado
+     console.log(decodificado)
+     return decodificado.toLowerCase()
     }
+
 const checaCondicaoEncode = () => {
 
     if (base64.checked ==true){
@@ -87,3 +91,14 @@ const checaCondicaoDecode = () => {
     }
 
 }
+   // if(inputValor.charCodeAt(i) >= 65 && inputValor.charCodeAt(i)<= 90){
+            //     resultado = ((inputValor.charCodeAt(i) - 65) + deslocamento) % 26 + 65
+            //     console.log(resultado)
+            // } else if(inputValor.charCodeAt(i) >= 97 && inputValor.charCodeAt(i)<= 122){
+            //     resultado = ((inputValor.charCodeAt(i) - 97) + deslocamento) % 26  + 97;
+            //     console.log(resultado)
+            // } else if (inputValor.charCodeAt(i)===32 ){
+               
+            //     resultado = 32;
+            //     console.log(resultado)
+            // }
